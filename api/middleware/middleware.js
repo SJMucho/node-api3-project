@@ -1,17 +1,25 @@
 function logger(req, res, next) {
-  // DO YOUR MAGIC
+  const date = new Date();
+  console.log(`
+    REQUEST METHOD: ${req.method}
+    REQUEST URL: ${req.originalUrl}
+    TIMESTAMP: ${date.toLocaleString()}
+  `);
+  next();
 }
 
-function validateUserId(req, res, next) {
-  // DO YOUR MAGIC
-}
+const validateUserId = async (req, res, next) => {
+  const { id } = req.params;
+  const user = await Users.id;
+  next();
+};
 
 function validateUser(req, res, next) {
-  // DO YOUR MAGIC
+  next();
 }
 
 function validatePost(req, res, next) {
-  // DO YOUR MAGIC
+  next();
 }
 
 // do not forget to expose these functions to other modules
